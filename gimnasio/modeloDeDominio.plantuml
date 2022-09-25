@@ -1,0 +1,12 @@
+@startuml
+
+class Máquina
+class Persona
+class Ejercicio
+class Pago
+
+Persona --* Ejercicio : " lleva a cabo"
+Ejercicio ..o Máquina : " realizado en"
+
+
+@enduml
