@@ -1,0 +1,20 @@
+@startuml
+
+start
+
+:Cliente quiere hacer uso del gimnasio;
+
+if(¿Ha realizado el pago?) then (yes)
+    :Hace uso de las instalaciones;
+    end
+else (no)
+    if(¿Quiere realizar el pago?) then (yes)
+    :Hace uso de las instalaciones;
+    else (no)
+    end
+    endif
+endif
+
+
+end
+@enduml

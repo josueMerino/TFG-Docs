@@ -1,11 +1,11 @@
 @startuml
 
 class Máquina
-class Persona
+class Cliente
 class Ejercicio
-class Pago
 
-Persona --* Ejercicio : " lleva a cabo"
+Cliente --* Ejercicio : " lleva a cabo"
+Cliente --* Pago : " realiza"
 Ejercicio ..o Máquina : " realizado en"
 
 
