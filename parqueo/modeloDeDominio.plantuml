@@ -1,0 +1,12 @@
+@startuml
+
+class Cliente
+class Pago
+class Parqueo
+
+Cliente --* Pago : ejerce pago
+Pago --* Parqueo : da acceso
+Parqueo --* Instalacion : se compone de
+Instalacion --o Vehículo : alberga
+
+@enduml
