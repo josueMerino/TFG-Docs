@@ -6,7 +6,7 @@ start
 
 if(¿Ha realizado el pago?) then (yes)
     :Hace uso de las instalaciones;
-    end
+    end 
 else (no)
     if(¿Quiere realizar el pago?) then (yes)
     :Hace uso de las instalaciones;

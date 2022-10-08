@@ -1,12 +1,19 @@
 @startuml
 
-class Máquina
+class Gym
 class Cliente
-class Ejercicio
+class Pago
+class Instalacion
+class Maquina
+class Ejercicio 
 
-Cliente --* Ejercicio : " lleva a cabo"
-Cliente --* Pago : " realiza"
-Ejercicio ..o Máquina : " realizado en"
+Cliente --* Pago : "ejecuta"
+Pago --* Gym : "da acceso"
+Gym --* Instalacion : "se compone"
 
+
+Instalacion --o Ejercicio : "se lleva a cabo"
+Instalacion --o Maquina : "tiene"
+Maquina --o Ejercicio : "se lleva a cabo"
 
 @enduml
