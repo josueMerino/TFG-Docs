@@ -1,0 +1,52 @@
+@startuml
+entity Gym{
+  *id <<PK>>
+  --
+  *cliente_id <<FK>>
+  *payment_id <<FK>>
+  *tipo_abono
+  *modalidad_pago
+  *fecha_alta
+  fecha_baja
+  *huella_activada
+}
+
+entity Payments{
+ *id <<PK>>
+ --
+ *titular
+ *documento_identidad
+ *card_id <<FK>>
+ *direccion
+}
+
+entity Cards {
+ *id
+ --
+ *numero
+}
+
+entity Clientes {
+  *id <<PK>>
+  --
+  *nombre
+  *apellidos
+  *documento_identidad
+  *sexo
+  fecha_nacimiento
+  telefono
+  email
+  pais_nacimiento <<FK>>
+  nacionalidad <<FK>>
+  idioma <<FK>>
+  titulation <<FK>>
+  comentarios
+  *interno
+  *categoria
+}
+
+Payments ||--|{ Gym
+Cards ||--|{ Payments
+Clientes ||--|{ Gym
+
+@enduml

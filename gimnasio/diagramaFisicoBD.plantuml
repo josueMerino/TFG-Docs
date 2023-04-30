@@ -1,0 +1,55 @@
+@startuml
+package Residencia <<Database>>
+{
+  entity Gym {
+    *id : UNSIGNED INTEGER <<PK>>
+    --
+    *cliente_id : UNSIGNED INTEGER <<FK>>
+    *payment_id : UNSIGNED INTEGER <<FK>>
+    *tipo_abono : VARCHAR(150)
+    *modalidad_pago : ENUM('Mensual', 'Anual')
+    *fecha_alta : DATE
+    fecha_baja : DATE
+    *huella_activada : BOOLEAN
+  }
+
+  entity Payments {
+    *id : UNSIGNED INTEGER <<PK>>
+    --
+    *titular : VARCHAR(150)
+    *documento_identidad : VARCHAR(150)
+    *card_id : UNSIGNED INTEGER <<FK>> 
+    *direccion : VARCHAR(200)
+  }
+
+  entity Cards {
+    *id : UNSIGNED INTEGER <<PK>>
+    --
+    *numero : VARCHAR(250)
+  }
+
+  entity Clientes {
+  *id : UNSIGNED INTEGER <<PK>>
+  --
+  *nombre : VARCHAR(250)
+  *apellidos : VARCHAR(250)
+  *documento_identidad : VARCHAR(250)
+  *sexo : ENUM('M', 'F', 'O')
+  fecha_nacimiento : DATE
+  telefono : VARCHAR(250)
+  email : VARCHAR(250)
+  pais_nacimiento : VARCHAR(250) <<FK>> 
+  nacionalidad : VARCHAR(250) <<FK>> 
+  idioma : VARCHAR(250) <<FK>> 
+  titulation : VARCHAR(250) <<FK>> 
+  comentarios : VARCHAR(250)
+  *interno : BOOLEAN
+  *categoria : VARCHAR(250)
+}
+
+Payments ||--|{ Gym
+Cards ||--|{ Payments
+Clientes ||--|{ Gym
+}
+
+@enduml
