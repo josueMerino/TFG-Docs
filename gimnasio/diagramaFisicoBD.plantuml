@@ -1,34 +1,38 @@
 @startuml
 package Residencia <<Database>>
 {
-  entity Gym {
+
+  entity abono_tipos{
+    *id : UNSIGNED INTEGER <<PK>>
+    --
+    *nombre : VARCHAR(250)
+    *monto : DECIMAL(8,2)
+  }
+
+
+  entity cuentas {
+    *id : UNSIGNED INTEGER <<PK>>
+    --
+    *titular : VARCHAR(250)
+    *numero : VARCHAR(250)
+    *tipo : ENUM('Tarjeta', 'Cuenta Bancaria')
+    *documento_identidad : VARCHAR(250)
+    *direccion : TEXT
+  }
+
+  entity gym {
     *id : UNSIGNED INTEGER <<PK>>
     --
     *cliente_id : UNSIGNED INTEGER <<FK>>
     *payment_id : UNSIGNED INTEGER <<FK>>
-    *tipo_abono : VARCHAR(150)
+    *abono_tipo_id : UNSIGNED INTEGER <<FK>>
     *modalidad_pago : ENUM('Mensual', 'Anual')
     *fecha_alta : DATE
     fecha_baja : DATE
     *huella_activada : BOOLEAN
   }
 
-  entity Payments {
-    *id : UNSIGNED INTEGER <<PK>>
-    --
-    *titular : VARCHAR(150)
-    *documento_identidad : VARCHAR(150)
-    *card_id : UNSIGNED INTEGER <<FK>> 
-    *direccion : VARCHAR(200)
-  }
-
-  entity Cards {
-    *id : UNSIGNED INTEGER <<PK>>
-    --
-    *numero : VARCHAR(250)
-  }
-
-  entity Clientes {
+  entity clientes {
   *id : UNSIGNED INTEGER <<PK>>
   --
   *nombre : VARCHAR(250)
@@ -47,9 +51,9 @@ package Residencia <<Database>>
   *categoria : VARCHAR(250)
 }
 
-Payments ||--|{ Gym
-Cards ||--|{ Payments
-Clientes ||--|{ Gym
+cuentas ||--|{ gym
+clientes ||--|{ gym
+abono_tipos ||--|| gym
 }
 
 @enduml
