@@ -20,11 +20,11 @@ package Residencia <<Database>>
     *direccion : TEXT
   }
 
-  entity gym {
+  entity gyms {
     *id : UNSIGNED INTEGER <<PK>>
     --
     *cliente_id : UNSIGNED INTEGER <<FK>>
-    *payment_id : UNSIGNED INTEGER <<FK>>
+    *cuenta_id : UNSIGNED INTEGER <<FK>>
     *abono_tipo_id : UNSIGNED INTEGER <<FK>>
     *modalidad_pago : ENUM('Mensual', 'Anual')
     *fecha_alta : DATE
@@ -51,9 +51,9 @@ package Residencia <<Database>>
   *categoria : VARCHAR(250)
 }
 
-cuentas ||--|{ gym
-clientes ||--|{ gym
-abono_tipos ||--|| gym
+cuentas ||--|{ gyms
+clientes ||--|{ gyms
+abono_tipos ||--|| gyms
 }
 
 @enduml
