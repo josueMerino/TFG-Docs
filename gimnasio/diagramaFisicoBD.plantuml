@@ -20,7 +20,7 @@ package Residencia <<Database>>
     *direccion : TEXT
   }
 
-  entity gym {
+  entity gyms {
     *id : UNSIGNED INTEGER <<PK>>
     --
     *cliente_id : UNSIGNED INTEGER <<FK>>
@@ -51,9 +51,9 @@ package Residencia <<Database>>
   *categoria : VARCHAR(250)
 }
 
-cuentas ||--|{ gym
-clientes ||--|{ gym
-abono_tipos ||--|| gym
+cuentas ||--|{ gyms
+clientes ||--|{ gyms
+abono_tipos ||--|| gyms
 }
 
 @enduml
