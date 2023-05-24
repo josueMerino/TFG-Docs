@@ -1,0 +1,54 @@
+@startuml
+
+entity abono_tipos{
+  *id <<PK>>
+  --
+  *nombre
+  *monto
+}
+
+entity parking{
+  *id <<PK>>
+  --
+  *cliente_id <<FK>>
+  *cuenta_id <<FK>>
+  *abono_tipo_id <<FK>>
+  *modalidad_pago
+  *fecha_alta
+  fecha_baja
+  *matricula_coche
+}
+
+entity cuentas {
+ *id <<PK>>
+ --
+ *titular
+ *numero
+ *tipo
+ *documento_identidad
+ *direccion
+}
+
+entity clientes {
+  *id <<PK>>
+  --
+  *nombre
+  *apellidos
+  *documento_identidad
+  *sexo
+  fecha_nacimiento
+  telefono
+  email
+  pais_nacimiento <<FK>>
+  nacionalidad <<FK>>
+  idioma <<FK>>
+  titulation <<FK>>
+  comentarios
+  *interno
+  *categoria
+}
+
+
+cuentas ||--|{ parking
+clientes ||--|{ parking
+abono_tipos ||--|| parking
