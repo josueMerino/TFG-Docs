@@ -1,0 +1,19 @@
+@startuml
+title Despliegue de aplicación residencia
+
+database Residencia
+
+cloud AWS
+
+node Frontend
+
+node Backend
+
+AWS --> Frontend : lanza
+AWS --> Backend : lanza
+AWS --> Residencia : lanza
+
+Backend --> Residencia : "pide datos y consulta"
+Frontend --> Backend : "consume y consulta"
+
+@enduml

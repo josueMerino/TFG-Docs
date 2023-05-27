@@ -1,0 +1,12 @@
+@startuml
+!theme vibrant
+title Indicar el mes en el que iniciará el gimnasio o el comienzo del pago
+start
+if (¿Es el mes en el que el cliente se dió de alta?) then (true)
+ :Cambio de estado de cliente a activo;
+ :Empieza el cobro de la cuota;
+else
+ stop
+endif
+end
+@enduml

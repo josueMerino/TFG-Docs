@@ -1,0 +1,7 @@
+@startuml
+!theme vibrant
+title Categorización de los clientes en el gimnasio
+[*] -r-> Activo
+Activo --> Inactivo : se da de baja
+Inactivo --> Activo : se da de alta
+@enduml

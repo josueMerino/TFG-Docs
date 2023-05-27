@@ -1,0 +1,26 @@
+@startuml
+!theme vibrant
+title Diagrama de Paquetes
+
+package Vista{
+    package "Interfaz Web: Rol Recepción"
+    package "Interfaz Web: Rol Gestor"
+}
+
+package "Lógica de Negocio" as Logica{
+    package "Sistema de gimnasio"
+    package "Sistema de clientes"
+}
+
+package Modelo{
+    package "Modelo de gimnasio"
+    package "Modelo de clientes"
+}
+
+package "Base de Datos" as BD 
+
+Vista --> Logica : " Interactúa"
+Logica --> Modelo : " Pide datos"
+Modelo -l-> BD : " Hace consulta"
+BD -r-> Modelo : " Devuelve datos"
+@enduml

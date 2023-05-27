@@ -1,4 +1,5 @@
 @startuml
+!theme vibrant
 entity Gym{
   *id <<PK>>
   --

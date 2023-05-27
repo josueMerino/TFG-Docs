@@ -1,0 +1,26 @@
+@startuml
+!theme vibrant
+left to right direction
+title Actores
+Administrador as Admin
+
+package Gimnasio {
+ usecase "Da de alta" as UC1
+ usecase "Categorizar" as UC2
+ usecase "Dar de baja" as UC3
+ usecase "Generación de contrato" as UC4
+ usecase "Añadir cuotas" as UC5
+ usecase "Registro de huella" as UC6
+ usecase "Mostrar un listado" as UC7
+ usecase "Indicar el mes de inicio" as UC8
+}
+
+Admin --> UC1
+Admin --> UC2
+Admin --> UC3
+Admin --> UC4
+Admin --> UC5
+Admin --> UC6
+Admin --> UC7
+Admin --> UC8
+@enduml

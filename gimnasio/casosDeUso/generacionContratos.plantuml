@@ -1,0 +1,17 @@
+@startuml
+!theme vibrant
+title Generación de contrato para los clientes
+start
+
+if(¿Se ha registrado un nuevo cliente?) then (true)
+ :Generar contrato para cliente;
+else (false)
+ stop
+endif
+if(¿Se ha ordenado generar un documento de un cliente ya registrado?) then (true)
+ :Generar contrato para cliente;
+else (false)
+ stop
+endif
+end
+@enduml
