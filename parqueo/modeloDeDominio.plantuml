@@ -2,11 +2,11 @@
 
 class Cliente
 class Pago
-class Parqueo
+class Aparcamiento
 
 Cliente --* Pago : ejerce pago
-Pago --* Parqueo : da acceso
-Parqueo --* Instalacion : se compone de
+Pago --* Aparcamiento : da acceso
+Aparcamiento --* Instalacion : se compone de
 Instalacion --o Vehículo : alberga
 
 @enduml

@@ -7,16 +7,16 @@ entity abono_tipos{
   *monto
 }
 
-entity gym{
+entity parking{
   *id <<PK>>
   --
   *cliente_id <<FK>>
-  *payment_id <<FK>>
+  *cuenta_id <<FK>>
   *abono_tipo_id <<FK>>
   *modalidad_pago
   *fecha_alta
   fecha_baja
-  *huella_activada
+  *matricula_coche
 }
 
 entity cuentas {
@@ -49,8 +49,6 @@ entity clientes {
 }
 
 
-cuentas ||--|{ gym
-clientes ||--|{ gym
-abono_tipos ||--|| gym
-
-@enduml
+cuentas ||--|{ parking
+clientes ||--|{ parking
+abono_tipos ||--|| parking
