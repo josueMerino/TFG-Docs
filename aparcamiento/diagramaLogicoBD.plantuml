@@ -1,0 +1,58 @@
+@startuml
+
+package Residencia <<Database>>{
+  entity abono_tipos{
+    *id : UNSIGNED INTEGER NOT NULL <<PK>>
+    --
+    *nombre : VARCHAR(250)
+    *monto : DECIMAL(8,2)
+    *tipo : ENUM('gym', 'parking')
+  }
+
+  entity parking{
+    *id : UNSIGNED INTEGER NOT NULL <<PK>>
+    --
+    *cliente_id : UNSIGNED INTEGER <<FK>>
+    *cuenta_id : UNSIGNED INTEGER <<FK>>
+    *abono_tipo_id : UNSIGNED INTEGER <<FK>>
+    *modalidad_pago : ENUM('Mensual', 'Anual')
+    *fecha_alta : DATE
+    fecha_baja : DATE
+    *matricula_coche : VARCHAR(250)
+    *plaza : VARCHAR(250)
+  }
+
+  entity cuentas {
+    *id : UNSIGNED INTEGER <<PK>>
+    --
+    *titular : VARCHAR(250)
+    *numero : VARCHAR(250)
+    *tipo : ENUM('Tarjeta', 'Cuenta Bancaria')
+    *documento_identidad : VARCHAR(250)
+    *direccion : TEXT
+  }
+
+  entity clientes {
+  *id : UNSIGNED INTEGER NOT NULL <<PK>>
+  --
+  *nombre : VARCHAR(250)
+  *apellidos : VARCHAR(250)
+  *documento_identidad : VARCHAR(250)
+  *sexo : ENUM('M', 'F', 'O')
+  fecha_nacimiento : DATE
+  telefono : VARCHAR(250)
+  email : VARCHAR(250)
+  pais_nacimiento : VARCHAR(250) <<FK>> 
+  nacionalidad : VARCHAR(250) <<FK>> 
+  idioma : VARCHAR(250) <<FK>> 
+  titulation : VARCHAR(250) <<FK>> 
+  comentarios : VARCHAR(250)
+  *interno : BOOLEAN
+  *categoria : VARCHAR(250)
+  }
+
+
+  cuentas ||--|{ parking
+  clientes ||--|{ parking
+  abono_tipos ||--|| parking
+}

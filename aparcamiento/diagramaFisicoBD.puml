@@ -17,6 +17,7 @@ entity parking{
   *fecha_alta
   fecha_baja
   *matricula_coche
+  *plaza
 }
 
 entity cuentas {
