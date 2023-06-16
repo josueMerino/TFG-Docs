@@ -1,0 +1,4 @@
+@startuml
+title Verificar fechas de plazas
+start
+: Obtener nº de plaza;

@@ -29,16 +29,16 @@ Admin --> UC8
 Admin --> UC9
 Admin --> UC11
 
-UC1 -- UC6
+UC1 -- UC6 : <<includes>>
 UC1 --> Client
 UC6 --> Client
 UC3 --> Client
 UC8 --> Client
 
-UC7 -- UC2
-UC7 -- UC10
+UC7 -- UC2 : <<includes>>
+UC7 -- UC10 : <<includes>>
 
-UC5 .. UC6
-UC5 .. UC12
+UC5 .. UC6 : <<extends>>
+UC5 .. UC12 : <<extends>>
 
 @enduml

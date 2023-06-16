@@ -28,10 +28,10 @@ Admin --> UC8
 Admin --> UC10
 Admin --> UC11
 
-UC1 -- UC3
-UC7 -- UC4
-UC7 -- UC9
-UC5 .. UC3
+UC1 -- UC3 : <<includes>>
+UC7 -- UC4 : <<includes>>
+UC7 -- UC9 : <<includes>>
+UC5 .. UC3 : <<extends>>
 
 UC1 -- Client
 UC3 -- Time
