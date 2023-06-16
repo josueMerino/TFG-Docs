@@ -17,6 +17,7 @@ package Aparcamiento{
     usecase "Eliminación de registro" as UC8
     usecase "Paginación del listado" as UC9
     usecase "Búsqueda de registro" as UC10
+    usecase "Generación de documento Excel" as UC11
 }
 
 Admin --> UC1
@@ -25,8 +26,12 @@ Admin --> UC5
 Admin --> UC7
 Admin --> UC8
 Admin --> UC10
+Admin --> UC11
 
 UC1 -- UC3
 UC7 -- UC4
 UC7 -- UC9
 UC5 .. UC3
+
+UC1 -- Client
+UC3 -- Time
