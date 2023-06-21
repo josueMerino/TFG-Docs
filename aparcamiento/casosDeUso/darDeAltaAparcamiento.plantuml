@@ -1,5 +1,5 @@
 @startuml
-
+!theme vibrant
 title Dar de alta a un cliente en el aparcamiento
 
 start

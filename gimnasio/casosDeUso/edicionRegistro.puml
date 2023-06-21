@@ -1,0 +1,21 @@
+@startuml
+
+!theme vibrant
+scale 50
+title Edición de registro
+
+start
+
+: Actualización de datos (si se han modificado), 
+ excepto los del cliente;
+
+if(¿Se envió un documento?) then (true)
+    :Subida de archivo;
+else (false)
+endif
+if(¿Se ha registrado la huella?) then (true)
+    :Registro de huella;
+else(false)
+endif
+end
+@enduml

@@ -1,0 +1,14 @@
+@startuml
+
+!theme vibrant
+scale 5
+title Registro de huella
+
+start
+
+if("¿Se ha indicado que se registró la huella?") then (true)
+    :Colocar en el registro que se ha registrado la huella;
+    :Se coloca el registro en los activos;
+    end
+else (false)
+end

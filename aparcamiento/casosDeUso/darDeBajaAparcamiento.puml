@@ -1,6 +1,6 @@
 @startuml
 title Dar de baja un cliente en el aparcamiento
-
+scale 120
 :Obtener fecha de baja del registro;
 
 if (¿Esta registrada la fecha de baja y ha pasado la fecha?) then (true)
@@ -9,5 +9,12 @@ if (¿Esta registrada la fecha de baja y ha pasado la fecha?) then (true)
 else if (¿Esta registrada la fecha de baja y ha pasado la fecha?) then (true)
     end;
 else (false)
-    
+    :Registrar fecha de baja;
+    if ("¿La fecha de baja del mes es menor que 20?") then (true)
+        :Dar de baja al cliente;
+        end
+    else (false)
+        :Cobrar el mes siguiente;
+        :Dar de baja al cliente;
+        end
 endif
