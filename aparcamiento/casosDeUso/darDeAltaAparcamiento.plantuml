@@ -10,7 +10,15 @@ if ("¿Está registrado el residente?") then (true)
 else (false)
     :Dar de alta con datos mínimos al cliente;
 endif
+
 : Ingreso de datos del pagador;
 : Ingreso de tipo de abono;
 : Ingreso de plaza de parking;
-stop
+: Verificacion de disponibilidad de plaza;
+
+if (Plaza disponible) then (true)
+ :Crear registro de cliente;
+ end
+else (false)
+ :Denegar creación;
+ end

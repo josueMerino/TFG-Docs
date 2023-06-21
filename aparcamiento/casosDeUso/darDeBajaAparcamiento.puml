@@ -1,4 +1,13 @@
 @startuml
 title Dar de baja un cliente en el aparcamiento
 
-if ()
+:Obtener fecha de baja del registro;
+
+if (¿Esta registrada la fecha de baja y ha pasado la fecha?) then (true)
+    :Dar de baja al cliente;
+    end
+else if (¿Esta registrada la fecha de baja y ha pasado la fecha?) then (true)
+    end;
+else (false)
+    
+endif
