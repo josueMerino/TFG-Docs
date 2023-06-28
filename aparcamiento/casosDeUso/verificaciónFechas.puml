@@ -3,16 +3,16 @@ title Verificar fechas de plazas
 start
 :Obtener nº de plaza;
 :Obtener fechas (fecha_alta y fecha_baja);
-:Obtener todos los registros de parking con el nº de plaza ingresado;
+:Obtener todos los registros del aparcamiento con el nº de plaza ingresado;
 if (No existen registros con esa plaza) then (true)
     :La plaza está disponible;
     end
 else (false)
     : Se filtran en los registros con los siguientes casos para determinar disponibilidad;
-    : caso1 = fecha_alta_registro_evaluado < fecha_alta_nuevo_registro < fecha_baja_registro_evaluado;
+    : caso1 = fecha_alta_registro_evaluado <= fecha_alta_nuevo_registro <= fecha_baja_registro_evaluado;
     : caso2 = fecha_alta_registro_evaluado < fecha_baja_nuevo_registro < fecha_baja_registro_evaluado;
-    : caso3 = ( fecha_alta_nuevo_registro < fecha_alta_registro_evaluado) and (fecha_baja_nuevo_registro > fecha_baja_registro_evaluado);
-    : caso4 = ( fecha_alta_nuevo_registro < fecha_alta_registro_evaluado) and (fecha_baja_nuevo_registro > fecha_baja_registro_evaluado);
+    : caso3 = ( fecha_alta_nuevo_registro <= fecha_alta_registro_evaluado) and (fecha_baja_nuevo_registro > fecha_baja_registro_evaluado);
+    : caso4 = ( fecha_alta_nuevo_registro >= fecha_alta_registro_evaluado) and (fecha_baja_nuevo_registro < fecha_baja_registro_evaluado);
     if(caso1 or caso2 or caso3 or caso4) then (true)
         :La plaza no está disponible;
         end;

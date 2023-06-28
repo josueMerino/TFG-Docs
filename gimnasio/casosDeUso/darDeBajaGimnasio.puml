@@ -1,5 +1,5 @@
 @startuml
-title Dar de baja un cliente en el aparcamiento
+title Dar de baja un cliente en el gimnasio
 scale 120
 :Obtener fecha de baja del registro;
 
