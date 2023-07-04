@@ -1,5 +1,6 @@
 @startuml
 title Verificar fechas de plazas
+scale 80
 start
 :Obtener nº de plaza;
 :Obtener fechas (fecha_alta y fecha_baja);
