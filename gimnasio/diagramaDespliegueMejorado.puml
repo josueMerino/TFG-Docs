@@ -1,0 +1,51 @@
+@startuml
+
+skinparam defaultFontSize 20
+
+actor Usuario
+
+frame "Frontend" {
+    node "Navegador" as navegador
+    node "Vue.js\n(Frontend)" as vue_frontend
+    node "Amazon EC2\n(Frontend)" as ec2_frontend
+    node "Amazon CloudFront\n(CDN)" as cloudfront
+}
+
+frame "Backend" {
+    node "Amazon EC2\n(Backend)" as ec2_backend
+    node "Laravel\n(Backend)" as laravel_backend
+    node "Amazon RDS\n(Base de datos)" as rds
+    node "Amazon S3\n(Almacenamiento)" as s3
+}
+
+frame "Despliegue" {
+    node "Jenkins" as jenkins
+    node "Docker" as docker
+}
+
+Usuario -> navegador
+
+navegador --> vue_frontend
+vue_frontend --> ec2_frontend
+ec2_frontend --> cloudfront
+
+cloudfront --> ec2_backend
+ec2_backend --> laravel_backend
+laravel_backend --> rds
+laravel_backend --> s3
+
+jenkins --> docker
+docker --> ec2_frontend
+docker --> ec2_backend
+
+note right of navegador: Interfaz de usuario interactiva desarrollada en Vue.js
+note left of ec2_frontend: Despliegue del frontend de Vue.js en una instancia de EC2 dedicada
+note right of cloudfront: Entrega de contenido estático a través de Amazon CloudFront (CDN)
+note left of ec2_backend: Enrutamiento de solicitudes a la instancia de EC2 dedicada para el backend
+note right of laravel_backend: Lógica de negocio y API implementada en Laravel en una instancia de EC2 dedicada
+note left of rds: Almacenamiento y recuperación de datos en Amazon RDS (Base de datos)
+note right of s3: Almacenamiento de archivos multimedia en Amazon S3
+note left of jenkins: Automatización del proceso de construcción y despliegue con Jenkins
+note right of docker: Despliegue de la imagen de Vue.js y Laravel en instancias de EC2 dedicadas usando Docker
+
+@enduml

@@ -1,0 +1,16 @@
+@startuml
+!theme vibrant
+scale 50
+title Subida de archivo de contrato
+
+start
+
+if("¿Se ha enviado el documento?") then (true)
+    :Obtener el archivo;
+    :Guardarlo en el almacenamiento correspondiente;
+    :Guardar nombre hasheado en la base de datos;
+    end
+else (false)
+end
+
+@enduml

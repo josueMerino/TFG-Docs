@@ -1,0 +1,11 @@
+@startuml
+
+!theme vibrant
+scale 5
+title Listado de registro
+
+start
+:Obtener todos los registros;
+:Clasificarlos según su categoría;
+:Paginarlos según el límite que se le ha dado;
+end

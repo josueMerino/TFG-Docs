@@ -1,0 +1,11 @@
+@startuml
+!theme vibrant
+scale 5
+
+title Búsqueda de Registro
+
+start
+:Obtener el texto de búsqueda;
+:Buscar coincidencias con cada campo de los registros;
+:Mostrar los registros que tienen coincidencias con el texto dado;
+end

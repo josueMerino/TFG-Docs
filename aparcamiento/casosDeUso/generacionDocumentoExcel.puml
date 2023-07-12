@@ -1,0 +1,25 @@
+@startuml
+!theme vibrant
+scale 80
+title Generación de documento Excel
+start
+
+if(¿Se ha ordenado generar un el documento?) then (true)
+ :Obtener todos los registros;
+ :Formatear los datos para los encabezados:
+  - Nombre del cliente
+  - Apellidos del cliente
+  - Tipo de abono
+  - Fecha de inicio
+  - Fecha de fin
+  - Matricula del vehículo
+  - Plaza
+  - Categoría de cliente
+  - Total;
+  : Generar archivo de hoja de cálculo;
+  : Descargarlo;
+else (false)
+ stop
+endif
+end
+@enduml

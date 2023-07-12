@@ -1,0 +1,11 @@
+@startuml
+
+!theme vibrant
+scale 5
+title Eliminación de registro
+
+start
+:Obtener identificador del registro;
+:Buscar registro en la base de datos;
+:Eliminar el registro;
+end
