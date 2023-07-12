@@ -12,18 +12,12 @@ CREATE TABLE `residencia_dev`.`gyms` (
     `deleted_at` TIMESTAMP NULL,
     PRIMARY KEY (`id`)
 ) ENGINE = InnoDB;
-
-ALTER TABLE
-    `gyms`
-ADD
-    CONSTRAINT `gyms_clientes_foreign` FOREIGN KEY (`cliente_id`) REFERENCES `clientes`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
-ALTER TABLE
-    `gyms`
-ADD
-    CONSTRAINT `gyms_cuentas_foreign` FOREIGN KEY (`cuenta_id`) REFERENCES `cuentas`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
-ALTER TABLE
-    `gyms`
-ADD
-    CONSTRAINT `gyms_abono_tipos_foreign` FOREIGN KEY (`abono_tipo_id`) REFERENCES `abono_tipos`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `gyms`
+ADD CONSTRAINT `gyms_clientes_foreign` FOREIGN KEY (`cliente_id`) REFERENCES `clientes`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `gyms`
+ADD CONSTRAINT `gyms_cuentas_foreign` FOREIGN KEY (`cuenta_id`) REFERENCES `cuentas`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `gyms`
+ADD CONSTRAINT `gyms_abono_tipos_foreign` FOREIGN KEY (`abono_tipo_id`) REFERENCES `abono_tipos`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `gyms`
+ADD `documentos_firmados` JSON NULL
+AFTER `huella_activada`;
